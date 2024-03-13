@@ -76,4 +76,4 @@ jobs:
       - name: Paste link to Allure report
         if: always()
         run: |
-          echo ${{ GH_PAGES_URL }}/${{ env.RESULTS_PATH }}
+          echo ${{ env.GH_PAGES_URL }}/${{ env.RESULTS_PATH }}
