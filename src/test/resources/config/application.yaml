@@ -1,11 +1,10 @@
 spring:
-  #  main:
-  #    banner-mode: off
+  main:
+    banner-mode: off
   profiles:
     active: local
 app:
   base-url: https://api.apilayer.com
-  expired-api-key: ${EXPIRED_API_KEY}
   fixer-api-key: ${FIXER_API_KEY}
-  number-verification-api-key: ${NUMBER-VERIFICATION_API_KEY}
+  number-verification-api-key: ${NUMBER_VERIFICATION_API_KEY}
   fixer-api-key-expired: ${FIXER_API_KEY_EXPIRED}
