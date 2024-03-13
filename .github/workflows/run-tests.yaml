@@ -27,15 +27,12 @@ jobs:
       FIXER_API_KEY_EXPIRED: $ {{ secrets.FIXER_API_KEY_EXPIRED }}
       NUMBER_VERIFICATION_API_KEY: $ {{ secrets.NUMBER_VERIFICATION_API_KEY }}
       ARCHITECTURE: x64
-      RESULTS_PATH: ${{ inputs.environment }}/${{ inputs.clusterPrefix }}
-      GH_PAGES_URL: https://itesterok.github.io/api-testing-with-cucumber/
+      RESULTS_PATH: ${{ inputs.environment }}/${{ inputs.runPrefix }}
+      GH_PAGES_URL: https://itesterok.github.io/api-testing-with-cucumber
 
     steps:
       - name: Checkout ⬇️
         uses: actions/checkout@v4
-        with:
-          repository: itesterok/api-testing-with-cucumber
-          token: ${{ secrets.GH_TOKEN }}
 
       - name: Setup Java 21 ☕️
         uses: actions/setup-java@v4
