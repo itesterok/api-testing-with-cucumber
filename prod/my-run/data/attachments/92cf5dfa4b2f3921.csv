@@ -1,0 +1,2 @@
+code	type	info
+202	invalid_currency_codes	You have provided one or more invalid Currency Codes. [Required format: currencies=EUR,USD,GBP,...]
