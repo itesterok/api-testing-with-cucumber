@@ -86,4 +86,4 @@ In order to use the framework locally, you need to:
    should make a debug easier ![screensots/img_6.png](screenshots/img_6.png)
 
 ## That's it! Easy testing :) 
-![img_1.png](img_1.png)
+![img_1.png](screenshots/img_11.png)
