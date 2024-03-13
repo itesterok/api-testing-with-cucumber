@@ -1,8 +1,7 @@
 package com.apilayer.api.common;
 
-import static com.apilayer.api.common.HeaderUtility.addHeadersToRequest;
-
 import java.util.Map;
+
 import lombok.Builder;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpHeaders;
@@ -14,6 +13,8 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
+
+import static com.apilayer.api.common.HeaderUtility.addHeadersToRequest;
 
 @Builder(builderMethodName = "build")
 public final class HttpClient {

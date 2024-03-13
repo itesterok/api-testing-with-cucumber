@@ -7,4 +7,5 @@ import org.junit.platform.suite.api.Suite;
 @Suite
 @IncludeEngines("cucumber")
 @SelectClasspathResource("com.apilayer")
-public class CucumberIntegrationTest {}
+public class CucumberIntegrationTest {
+}

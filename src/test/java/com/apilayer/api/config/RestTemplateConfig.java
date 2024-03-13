@@ -2,6 +2,7 @@ package com.apilayer.api.config;
 
 import java.time.Duration;
 import java.util.Collections;
+
 import org.apache.hc.client5.http.config.RequestConfig;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;

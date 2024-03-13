@@ -10,21 +10,21 @@ import lombok.Getter;
 @Getter
 public class TimeseriesResponse extends ResponseWithErrorCode {
 
-  @JsonProperty("success")
-  private Boolean success;
+    @JsonProperty("success")
+    private Boolean success;
 
-  @JsonProperty("timeseries")
-  private Boolean timeseries;
+    @JsonProperty("timeseries")
+    private Boolean timeseries;
 
-  @JsonProperty("start_date")
-  private LocalDate startDate;
+    @JsonProperty("start_date")
+    private LocalDate startDate;
 
-  @JsonProperty("end_date")
-  private LocalDate endDate;
+    @JsonProperty("end_date")
+    private LocalDate endDate;
 
-  @JsonProperty("base")
-  private FixerCurrency base;
+    @JsonProperty("base")
+    private FixerCurrency base;
 
-  @JsonProperty("rates")
-  private Map<LocalDate, Map<FixerCurrency, Double>> rates;
+    @JsonProperty("rates")
+    private Map<LocalDate, Map<FixerCurrency, Double>> rates;
 }

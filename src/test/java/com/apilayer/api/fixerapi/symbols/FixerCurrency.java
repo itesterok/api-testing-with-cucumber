@@ -2,6 +2,7 @@ package com.apilayer.api.fixerapi.symbols;
 
 import java.util.Arrays;
 import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.apache.logging.log4j.util.Strings;
