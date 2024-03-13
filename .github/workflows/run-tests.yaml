@@ -23,9 +23,9 @@ jobs:
     env:
       ENVIRONMENT: ${{ inputs.environment }}
       RUN_PREFIX: ${{ inputs.runPrefix }}
-      FIXER_API_KEY: $ {{ secrets.FIXER_API_KEY }}
-      FIXER_API_KEY_EXPIRED: $ {{ secrets.FIXER_API_KEY_EXPIRED }}
-      NUMBER_VERIFICATION_API_KEY: $ {{ secrets.NUMBER_VERIFICATION_API_KEY }}
+      FIXER_API_KEY: ${{ secrets.FIXER_API_KEY }}
+      FIXER_API_KEY_EXPIRED: ${{ secrets.FIXER_API_KEY_EXPIRED }}
+      NUMBER_VERIFICATION_API_KEY: ${{ secrets.NUMBER_VERIFICATION_API_KEY }}
       ARCHITECTURE: x64
       RESULTS_PATH: ${{ inputs.environment }}/${{ inputs.runPrefix }}
       GH_PAGES_URL: https://itesterok.github.io/api-testing-with-cucumber
