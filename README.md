@@ -20,7 +20,7 @@ are easy to consume and to interact with.
 
 More concrete, we'll be interacting with [Fixer API Currency](https://apilayer.com/marketplace/fixer-api).
 
-Documentation is available here:
+Documentation is available here: https://apilayer.com/marketplace/fixer-api under ```Documentaton``` tab.
 
 We'll be testing the ```GET /fixer/timeseries/``` endpoint which returns historical data for exchange rates.
 
@@ -49,7 +49,9 @@ In order to use the framework locally, you need to:
    Fixer API, meaning such api key which exhausted its usage limits**. For the purposes of configuration either export
    the variable, i.e. ```export FIXER_API_KEY='-your-fixer-api-key-';``` either create ```application-local.yaml``` file
    and put it inside ```resources/config``` folder, then specify ```spring.profiles.active: local```
-   in ```application.yaml``` file. For demo purposes, the ```appplication-local.yaml``` file is provided and committed.
+   in ```application.yaml``` file. For demo purposes, the ```appplication-local.yaml``` file with correct api keys is
+   provided and committed, **however you still need to enable(!) it by specifying** ```spring.profiles.active: local```
+   **in** ```application.yaml``` **file!**
 3. You might want to use your own api key for Fixer API and Number Verification API. If you don't have yet such api
    key, you have to obtain it by creating an account on https://apilayer.com/ and subscribing to these services.
 
