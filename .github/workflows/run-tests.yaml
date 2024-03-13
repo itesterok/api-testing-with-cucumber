@@ -15,7 +15,7 @@ on:
 
 jobs:
   run-api-tests:
-    runs-on: buildjet-4vcpu-ubuntu-2204
+    runs-on: buildjet-2vcpu-ubuntu-2204
     environment: ${{ inputs.environment }}
     concurrency: ${{ inputs.environment }}-${{ inputs.runPrefix }}
     timeout-minutes: 6
