@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"fdc1c73d475e93bcd6d1fc6ee8a38212","name":"handling error codes","statistic":{"failed":0,"broken":8,"skipped":0,"passed":4,"unknown":0,"total":12}},{"uid":"566e7fbe8c0ef304d6a634bbdf29cdeb","name":"rates can be fetched with valid data","statistic":{"failed":0,"broken":4,"skipped":0,"passed":0,"unknown":0,"total":4}}]}
