@@ -20,60 +20,60 @@ jobs:
     concurrency: ${{ inputs.environment }}-${{ inputs.runPrefix }}
     timeout-minutes: 6
 
-  env:
-    ENVIRONMENT: ${{ inputs.environment }}
-    RUN_PREFIX: ${{ inputs.runPrefix }}
-    FIXER_API_KEY: $ {{ secrets.FIXER_API_KEY }}
-    FIXER_API_KEY_EXPIRED: $ {{ secrets.FIXER_API_KEY_EXPIRED }}
-    NUMBER_VERIFICATION_API_KEY: $ {{ secrets.NUMBER_VERIFICATION_API_KEY }}
-    ARCHITECTURE: x64
-    RESULTS_PATH: ${{ inputs.environment }}/${{ inputs.clusterPrefix }}
-    GH_PAGES_URL: https://itesterok.github.io/api-testing-with-cucumber/
+    env:
+      ENVIRONMENT: ${{ inputs.environment }}
+      RUN_PREFIX: ${{ inputs.runPrefix }}
+      FIXER_API_KEY: $ {{ secrets.FIXER_API_KEY }}
+      FIXER_API_KEY_EXPIRED: $ {{ secrets.FIXER_API_KEY_EXPIRED }}
+      NUMBER_VERIFICATION_API_KEY: $ {{ secrets.NUMBER_VERIFICATION_API_KEY }}
+      ARCHITECTURE: x64
+      RESULTS_PATH: ${{ inputs.environment }}/${{ inputs.clusterPrefix }}
+      GH_PAGES_URL: https://itesterok.github.io/api-testing-with-cucumber/
 
-  steps:
-    - name: Checkout ⬇️
-      uses: actions/checkout@v4
-      with:
-        repository: itesterok/api-testing-with-cucumber
-        token: ${{ secrets.GH_TOKEN }}
+    steps:
+      - name: Checkout ⬇️
+        uses: actions/checkout@v4
+        with:
+          repository: itesterok/api-testing-with-cucumber
+          token: ${{ secrets.GH_TOKEN }}
 
-    - name: Setup Java 21 ☕️
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'
-        distribution: 'adopt'
-        architecture: ${{ env.ARCHITECTURE }}
+      - name: Setup Java 21 ☕️
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'adopt'
+          architecture: ${{ env.ARCHITECTURE }}
 
-    - name: Set up Maven
-      uses: stCarolas/setup-maven@v5
-      with:
-        maven-version: 3.8.2
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v5
+        with:
+          maven-version: 3.8.2
 
-    - name: Compile and run tests 🏎
-      timeout-minutes: 3
-      run: |
-        mvn clean test
+      - name: Compile and run tests 🏎
+        timeout-minutes: 3
+        run: |
+          mvn clean test
 
-    - name: Generate Allure Report 🛟
-      if: always()
-      run: mvn allure:report
+      - name: Generate Allure Report 🛟
+        if: always()
+        run: mvn allure:report
 
-    - name: Upload Allure Report 🚁
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: Allure report
-        path: target/allure-results
+      - name: Upload Allure Report 🚁
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Allure report
+          path: target/allure-results
 
-    - name: Publish Allure Report 🚀
-      if: always()
-      uses: peaceiris/actions-gh-pages@v3.9.3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: target/site/allure-maven-plugin
-        destination_dir: ${{ env.RESULTS_PATH }}
+      - name: Publish Allure Report 🚀
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/site/allure-maven-plugin
+          destination_dir: ${{ env.RESULTS_PATH }}
 
-    - name: Paste link to Allure report
-      if: always()
-      run: |
-        echo ${{ GH_PAGES }}/${{ env.RESULTS_PATH }}
+      - name: Paste link to Allure report
+        if: always()
+        run: |
+          echo ${{ GH_PAGES }}/${{ env.RESULTS_PATH }}
