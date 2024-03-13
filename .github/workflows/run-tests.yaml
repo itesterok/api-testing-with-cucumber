@@ -28,6 +28,7 @@ jobs:
     NUMBER_VERIFICATION_API_KEY: $ {{ secrets.NUMBER_VERIFICATION_API_KEY }}
     ARCHITECTURE: x64
     RESULTS_PATH: ${{ inputs.environment }}/${{ inputs.clusterPrefix }}
+    GH_PAGES_URL: https://itesterok.github.io/api-testing-with-cucumber/
 
   steps:
     - name: Checkout ⬇️
@@ -71,3 +72,8 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: target/site/allure-maven-plugin
         destination_dir: ${{ env.RESULTS_PATH }}
+
+    - name: Paste link to Allure report
+      if: always()
+      run: |
+        echo ${{ GH_PAGES }}/${{ env.RESULTS_PATH }}
