@@ -46,9 +46,20 @@ jobs:
         with:
           maven-version: 3.8.2
 
+      - name: Cache Maven Repository 🚚
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.m2/repository
+            .allure
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
       - name: Compile and run tests 🏎
         timeout-minutes: 3
         run: |
+          ls -a
           mvn clean test
 
       - name: Generate Allure Report 🛟
@@ -57,13 +68,11 @@ jobs:
 
       - name: Upload Allure Report 🚁
         uses: actions/upload-artifact@v4
-        if: always()
         with:
           name: Allure report
           path: target/allure-results
 
       - name: Publish Allure Report 🚀
-        if: always()
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -71,6 +80,5 @@ jobs:
           destination_dir: ${{ env.RESULTS_PATH }}
 
       - name: Paste link to Allure report
-        if: always()
         run: |
           echo ${{ env.GH_PAGES_URL }}/${{ env.RESULTS_PATH }}
