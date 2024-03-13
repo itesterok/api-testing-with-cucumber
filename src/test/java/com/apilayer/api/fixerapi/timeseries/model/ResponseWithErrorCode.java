@@ -6,21 +6,21 @@ import lombok.Getter;
 @Getter
 public class ResponseWithErrorCode {
 
-    @JsonProperty("message")
-    private String errorMessage;
+  @JsonProperty("message")
+  private String errorMessage;
 
-    @JsonProperty("error")
-    private Error error;
+  @JsonProperty("error")
+  private Error error;
 
-    @Getter
-    public static class Error {
-        @JsonProperty("code")
-        private Integer code;
+  @Getter
+  public static class Error {
+    @JsonProperty("code")
+    private Integer code;
 
-        @JsonProperty("type")
-        private String type;
+    @JsonProperty("type")
+    private String type;
 
-        @JsonProperty("info")
-        private String info;
-    }
+    @JsonProperty("info")
+    private String info;
+  }
 }

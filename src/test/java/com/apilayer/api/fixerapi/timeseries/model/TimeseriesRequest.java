@@ -7,11 +7,11 @@ import lombok.Getter;
 @Getter
 public class TimeseriesRequest {
 
-    private String startDate;
+  private String startDate;
 
-    private String endDate;
+  private String endDate;
 
-    private String base;
+  private String base;
 
-    private String symbols;
+  private String symbols;
 }

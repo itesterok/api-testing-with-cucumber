@@ -58,7 +58,8 @@ In order to use the framework locally, you need to:
 1. Cucumber tests written as a feature files using [Gherkin](https://cucumber.io/docs/gherkin/reference/) placed
    inside ```resources/com.apilayer.features``` directory and devided by two files: one with positive tests and one with
    negative tests.
-2. You should be able to run / debug them through your IDE, i.e. from Intellij IDEA. ![screensots/img.png](screenshots/img.png)
+2. You should be able to run / debug them through your IDE, i.e. from Intellij
+   IDEA. ![screensots/img.png](screenshots/img.png)
 3. You can either run / debug the single test, the entire file or all the files at once.
 
 ## CI / CD Run
@@ -73,11 +74,13 @@ In order to use the framework locally, you need to:
 1. In this repo it's set up a GH Actions workflow which enables triggering the tests on demand. To use this option
    please go to Actions -> API Tests - manual run and run the workflow ![screensots/img_2.png](screenshots/img_2.png)
 2. You can specify the prefix so that your run will be persisted using gh pages.
-3. Gh pages allows to see the live report from each run, to find the link open the last run ![screensots/img_3.png](screenshots/img_3.png) and
+3. Gh pages allows to see the live report from each run, to find the link open the last
+   run ![screensots/img_3.png](screenshots/img_3.png) and
    check this step output ![screensots/img_4.png](screenshots/img_4.png)
 4. In general, the link is the following https://itesterok.github.io/api-testing-with-cucumber/prod/my-run/ where 'prod'
    refers to environment (curently only prod is available) and 'my-run' is the prefix run you specified in prior steps.
-5. Following the link you can find the live report which look the same as the local report ![screensots/img_5.png](screenshots/img_5.png)
+5. Following the link you can find the live report which look the same as the local
+   report ![screensots/img_5.png](screenshots/img_5.png)
 6. So that you can use the whole power of **Allure Report
    ** - [#1 Automation Test Reporting Tool](https://allurereport.org/)
 7. Also, it's implemented a request / response logging feature so that you can see the interaction with the service what

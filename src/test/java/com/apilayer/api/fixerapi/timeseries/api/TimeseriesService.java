@@ -1,11 +1,10 @@
 package com.apilayer.api.fixerapi.timeseries.api;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.apilayer.api.common.HttpClient;
 import com.apilayer.api.fixerapi.timeseries.model.TimeseriesRequest;
 import com.apilayer.api.fixerapi.timeseries.model.TimeseriesResponse;
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
