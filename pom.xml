@@ -16,7 +16,6 @@
         <allure-maven.version>2.12.0</allure-maven.version>
         <aspectj.version>1.9.20.1</aspectj.version>
         <cucumber.version>7.15.0</cucumber.version>
-        <junit.version></junit.version>
         <springboot.version>3.2.3</springboot.version>
     </properties>
 
@@ -106,14 +105,6 @@
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- Springboot configuration-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter</artifactId>-->
-        <!--            <version>${springboot.version}</version>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -125,12 +116,6 @@
             <artifactId>spring-boot-starter-aop</artifactId>
             <version>${springboot.version}</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-test</artifactId>-->
-        <!--            <version>${springboot.version}</version>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -189,17 +174,6 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.14.0</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.httpcomponents</groupId>-->
-        <!--            <artifactId>httpclient</artifactId>-->
-        <!--            <version>4.3.4</version>-->
-        <!--        </dependency>-->
-
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.httpcomponents</groupId>-->
-        <!--            <artifactId>httpclient</artifactId>-->
-        <!--            <version>4.5.14</version>-->
-        <!--        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5 -->
         <dependency>
@@ -207,7 +181,6 @@
             <artifactId>httpclient5</artifactId>
             <version>5.3</version>
         </dependency>
-
 
         <dependency>
             <groupId>org.slf4j</groupId>
