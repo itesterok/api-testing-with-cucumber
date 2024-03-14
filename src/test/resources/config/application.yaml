@@ -1,6 +1,8 @@
 spring:
   main:
     banner-mode: off
+#  profiles:
+#    active: local
 app:
   base-url: https://api.apilayer.com
   fixer-api-key: ${FIXER_API_KEY}
