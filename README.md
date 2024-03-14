@@ -11,9 +11,10 @@ tailor an imaginary project's specific needs.
 That is not a complete project since it among others aspects misses such important as:
 
 * automatic user management
-* retry mechanism on network issues
+* ~~retry mechanism on network issues~~ (update: added!)
 * exhaustive list of test cases
 * integration with notification systems
+* ~~tests parallelization~~ (update: added!)
 
 As an API counterpart is used this service: [API Marketplace](https://apilayer.com/) which provides a set of APIs which
 are easy to consume and to interact with.
