@@ -53,29 +53,36 @@ In order to use the framework locally, you need to:
    NUMBER_VERIFICATION_API_KEY
    FIXER_API_KEY_EXPIRED
    ```
+   where:
 
-   which stands for **valid api key for [Fixer
-   API](https://apilayer.com/marketplace/fixer-api?utm_source=apilayermarketplace&utm_medium=featured)**; **valid api
-   key for another service, not fixer API, for
-   example [Number Verification API](https://apilayer.com/marketplace/number_verification-api)**; **expired api key for
-   Fixer API, meaning such api key which exhausted its usage limits**.
+   FIXER_API_KEY
+   : stands for **valid api key**
+   for [Fixer API](https://apilayer.com/marketplace/fixer-api?utm_source=apilayermarketplace&utm_medium=featured)
 
-   For the purposes of configuration either export the variable, i.e.
+   NUMBER_VERIFICATION_API_KEY
+   : stands for **valid api key for another service, not fixer API**, for
+   example [Number Verification API](https://apilayer.com/marketplace/number_verification-api)
+
+   FIXER_API_KEY_EXPIRED
+   : stands for **expired api key for Fixer API**, meaning such api key which already exhausted its usage limits.
+
+   For the purposes of configuration either export the variable, i.e.:
 
    ```shell
    export FIXER_API_KEY=**************
    export NUMBER_VERIFICATION_API_KEY=**************
    export FIXER_API_KEY_EXPIRED=**************
    ```
-   either create `application-local.yaml` file and put it inside `resources/config` folder, then
-   in ```application.yaml``` file specify:
+   or create `application-local.yaml` file and put it inside `resources/config` folder, then in `application.yaml` file
+   specify:
 
    ```yaml
    spring.profiles.active: local
    ```
 
-   For demo purposes, the ```appplication-local.yaml``` file with correct api keys is provided and committed, **however
-   you still need to enable(!) it by specifying** `spring.profiles.active: local` **in** `application.yaml` **file!**
+   In general, you might want to use your own api keys, but for demo purposes, the `appplication-local.yaml` file with
+   correct api keys is provided and committed, **however you still have to enable it (!)** by
+   specifying `spring.profiles.active: local` in `application.yaml` file!
 
 
 3. You might want to use your own api key for Fixer API and Number Verification API. If you don't have yet such api
