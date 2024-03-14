@@ -53,7 +53,6 @@ In order to use the framework locally, you need to:
    NUMBER_VERIFICATION_API_KEY
    FIXER_API_KEY_EXPIRED
    ```
-   where:
 
    FIXER_API_KEY
    : stands for **valid api key**
@@ -80,10 +79,11 @@ In order to use the framework locally, you need to:
    spring.profiles.active: local
    ```
 
-   In general, you might want to use your own api keys, but for demo purposes, the `appplication-local.yaml` file with
-   correct api keys is provided and committed, **however you still have to enable it (!)** by
-   specifying `spring.profiles.active: local` in `application.yaml` file!
+   In general, you might want to use your own api keys, but for demo purposes the `appplication-local.yaml` file with
+   correct api keys is provided and committed.
 
+   > **However, you still have to enable it (!)** by specifying `spring.profiles.active: local` in `application.yaml`
+   file!
 
 3. You might want to use your own api key for Fixer API and Number Verification API. If you don't have yet such api
    key, you have to obtain it by creating an account on https://apilayer.com/ and subscribing to these services.
