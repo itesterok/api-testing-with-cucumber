@@ -12,6 +12,8 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.retry.annotation.Backoff;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -22,10 +24,9 @@ public class TimeseriesService {
 
     private static String TIMESERIES_URL = "/fixer/timeseries";
 
-    private final Map<String, String> optionalHeaders = new HashMap<>();
+    private final ThreadLocal<Map<String, String>> optionalHeaders = ThreadLocal.withInitial(HashMap::new);
 
-    @Value("${app.fixer-api-key}")
-    private String apiKey;
+    private final ThreadLocal<String> apiKey = ThreadLocal.withInitial(String::new);
 
     @Value("${app.base-url}")
     private String baseUrl;
@@ -34,7 +35,7 @@ public class TimeseriesService {
     private RestTemplate restTemplate;
 
     public TimeseriesService withApiKey(String apiKey) {
-        this.apiKey = apiKey;
+        this.apiKey.set(apiKey);
         return this;
     }
 
@@ -45,18 +46,19 @@ public class TimeseriesService {
 
     public TimeseriesService withHeaders(Map<String, String> headers) {
         if (headers == null || headers.isEmpty()) {
-            this.optionalHeaders.clear();
+            this.optionalHeaders.set(new HashMap<>());
         }
         else {
-            this.optionalHeaders.putAll(headers);
+            this.optionalHeaders.get().putAll(headers);
         }
         return this;
     }
 
+    @Retryable(backoff = @Backoff(delay = 10000, maxDelay = 60000))
     public ResponseEntity<TimeseriesResponse> getTimeseries(TimeseriesRequest timeseriesRequest) {
         final HttpHeaders headers = new HttpHeaders();
-        headers.add("apikey", apiKey);
-        optionalHeaders.forEach(headers::add);
+        headers.add("apikey", apiKey.get());
+        optionalHeaders.get().forEach(headers::add);
 
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
         queryParams.add("start_date", timeseriesRequest.getStartDate());
