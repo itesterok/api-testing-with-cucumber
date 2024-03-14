@@ -63,7 +63,7 @@ In order to use the framework locally, you need to:
    For the purposes of configuration either export the variable, i.e.
 
    ```shell
-   export FIXER_API_KEY = **************
+   export FIXER_API_KEY=**************
    export NUMBER_VERIFICATION_API_KEY=**************
    export FIXER_API_KEY_EXPIRED=**************
    ```
